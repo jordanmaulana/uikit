@@ -29,7 +29,7 @@ class VText extends StatelessWidget {
     this.decoration,
     this.maxLines,
     this.align,
-    this.color = Colors.white,
+    this.color,
     Key? key,
   }) : super(key: key);
 
@@ -58,10 +58,9 @@ class VText extends StatelessWidget {
 
 class AppBarText extends StatelessWidget {
   final String title;
-  final Color color;
+  final Color? color;
 
-  const AppBarText(this.title, {this.color = Colors.white, Key? key})
-      : super(key: key);
+  const AppBarText(this.title, {this.color, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +85,6 @@ class LabelText extends StatelessWidget {
       decoration: VStyle.corner(color: VColor.dark),
       child: VText(
         text,
-        color: Colors.white,
         fontSize: 12.0,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
